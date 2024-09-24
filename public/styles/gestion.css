@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+
+/* Estilos generales */
+body, html {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('menu-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 90%;
+  max-width: 1200px; /* Ancho máximo */
+  text-align: center;
+  overflow-y: auto;
+  height: 90vh; /* Reducido a 90vh para mayor visibilidad */
+}
+
+/* Header */
+header {
+  margin-bottom: 10px;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+header p {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+/* Grid layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columnas iguales */
+  grid-gap: 10px;
+  grid-template-areas: 
+    "upload-clients upload-products"
+    "clientes productos"
+    "pedidos pedidos"; /* Pedidos ocupa toda la fila */
+}
+
+/* Áreas para las secciones */
+.upload-section:nth-child(1) {
+  grid-area: upload-clients;
+}
+
+.upload-section:nth-child(2) {
+  grid-area: upload-products;
+}
+
+.list-section:nth-child(3) {
+  grid-area: clientes;
+}
+
+.list-section:nth-child(4) {
+  grid-area: productos;
+}
+
+.orders-section {
+  grid-area: pedidos;
+}
+
+/* Estilos de las cajas */
+.box {
+  background-color: #333;
+  padding: 15px;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.box h2 {
+  color: #ff69b4;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.box p {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+/* Botones y etiquetas */
+.box label {
+  background-color: #ff69b4;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.box label:hover {
+  background-color: #e60073;
+}
+
+.box button {
+  background-color: #ff69b4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.box button:hover {
+  background-color: #e60073;
+}
+
+/* Pedidos realizados */
+.orders-section {
+  margin-top: 10px;
+}
+
+.orders-section h2 {
+  font-size: 1.4rem;
+  color: #ff69b4;
+  margin-bottom: 5px;
+}
+
+.orders-view {
+  height: 150px; /* Altura reducida */
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 5px;
+  overflow-y: auto;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Listados (Clientes y Productos) */
+.list-container {
+  max-height: 200px; /* Altura reducida */
+  overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  background-color: #f0f0f0; /* Fondo gris claro */
+  color: #000; /* Texto en negro */
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+ul li:hover {
+  background-color: #ff69b4;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Notificación */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: none;
+}
+
+.notification.show {
+  display: block;
+}
+
+input[type="file"] {
+  display: none;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Principal</title>
+  <link rel="stylesheet" href="/styles/gestion.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Menu Principal</h1>
+      <p>Gestión de Clientes, Productos y Pedidos realizados</p>
+    </header>
+
+    <main class="grid-container">
+      <!-- Cargar Excel (solo un botón para cada sección) -->
+      <div class="upload-section box" id="clients-upload-section">
+        <h2>Cargar Excel de Clientes</h2>
+        <input type="file" id="uploadClientsExcel" accept=".xlsx, .xls">
+        <label for="uploadClientsExcel">Seleccionar archivo</label>
+        <p id="fileNameClient" class="file-name"></p>
+        <button id="uploadClientsBtn">Subir Excel Clientes</button>
+      </div>
+
+      <div class="upload-section box" id="products-upload-section">
+        <h2>Cargar Excel de Productos</h2>
+        <input type="file" id="uploadProductsExcel" accept=".xlsx, .xls">
+        <label for="uploadProductsExcel">Seleccionar archivo</label>
+        <p id="fileNameProduct" class="file-name"></p>
+        <button id="uploadProductsBtn">Subir Excel Productos</button>
+      </div>
+
+
+<!-- Listado de Clientes -->
+<div class="list-section box">
+  <h2>Listado de Clientes</h2>
+  <!-- Botón para eliminar duplicados de clientes -->
+  <div class="clear-duplicates-section">
+    <button id="clearClientsDuplicatesBtn">Eliminar Duplicados</button>
+  </div>
+  <p id="clientes-count">Cantidad de Clientes: 0</p> <!-- Cantidad de clientes -->
+  <div id="clientes-view" class="list-container">
+    <ul id="clientes-list"></ul>
+  </div>
+</div>
+
+      <!-- Listado de Productos -->
+      <div class="list-section box">
+        <h2>Listado de Productos</h2>
+              <!-- Botón para eliminar duplicados -->
+      <div class="clear-duplicates-section">
+        <button id="clearDuplicatesBtn">Eliminar Duplicados</button>
+      </div>
+        <p id="productos-count">Cantidad de Productos: 0</p> <!-- Cantidad de productos -->
+        <div id="productos-view" class="list-container">
+          <ul id="productos-list"></ul>
+        </div>
+      </div>
+
+      <!-- Pedidos Realizados -->
+      <div class="orders-section box full-width">
+        <h2>Pedidos Realizados</h2>
+        <p id="pedidos-count">Cantidad de Pedidos: 0</p> <!-- Cantidad de pedidos -->
+        <div class="orders-view">
+          <ul id="ordersView"></ul>
+        </div>
+      </div>
+    </main>
+
+    <!-- Notificación de éxito -->
+    <div id="notification" class="notification success" style="display: none;">
+      Archivo cargado con éxito
+    </div>
+  </div>
+
+  <script src="/js/gestion.js"></script>
+</body>
+</html>
